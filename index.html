@@ -112,6 +112,13 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdro
   .perks-row span{font-size:11.5px;padding:9px 14px}
 }
 
+/* бегущая строка */
+.strip{background:var(--grad);color:#fff;padding:15px 0;overflow:hidden;white-space:nowrap}
+.strip .row{display:inline-flex;gap:34px;animation:mv 32s linear infinite;font-size:13px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase}
+.strip .row span::before{content:"\2726 ";opacity:.75}
+@keyframes mv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 .grid{display:grid;gap:20px}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
