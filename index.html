@@ -143,6 +143,15 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdro
 .pr .s{font-weight:800;font-size:15.5px;color:var(--violet);white-space:nowrap;min-width:110px;text-align:right}
 @media(max-width:640px){.pr{flex-wrap:wrap;gap:6px;padding:14px 18px}.pr .n{flex:1 1 100%}.pr .s{margin-left:auto}}
 .note{margin-top:16px;font-size:13.5px;color:var(--muted)}
+/* скрытая часть прайса + кнопка «показать всё» */
+.panel .more{display:none}
+.panel.open .more{display:block}
+.morebtn{width:100%;border:0;border-top:1px solid var(--line);background:var(--bg2);cursor:pointer;
+  padding:16px;font-size:14px;font-weight:700;color:var(--violet);font-family:inherit;transition:.15s;
+  display:flex;align-items:center;justify-content:center;gap:9px}
+.morebtn:hover{background:var(--lav)}
+.morebtn::after{content:"⌄";font-size:17px;line-height:1;transform:translateY(-2px)}
+.panel.open .morebtn::after{content:"⌃";transform:translateY(2px)}
 
 /* галерея */
 .gal{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
@@ -338,7 +347,7 @@ footer a:hover{color:#f39ad0}
       <div class="pr"><div class="n">Японский маникюр</div><div class="d">1 ч</div><div class="s">1 300 – 1 700 ₽</div></div>
       <div class="pr"><div class="n">Бразильский маникюр</div><div class="d">1 ч</div><div class="s">1 800 – 2 200 ₽</div></div>
       <div class="pr"><div class="n">Маникюр детский</div><div class="d">1 ч</div><div class="s">950 – 1 200 ₽</div></div>
-      <div class="pr"><div class="n">Маникюр мужской</div><div class="d">50 мин</div><div class="s">1 300 ₽</div></div>
+      <div class="more"><div class="pr"><div class="n">Маникюр мужской</div><div class="d">50 мин</div><div class="s">1 300 ₽</div></div>
       <div class="pr"><div class="n">Наращивание, 0–3 размер</div><div class="d">2 ч</div><div class="s">1 900 – 2 300 ₽</div></div>
       <div class="pr"><div class="n">Наращивание, 3–5 размер</div><div class="d">2 ч</div><div class="s">2 600 ₽</div></div>
       <div class="pr"><div class="n">Наращивание, 6–7 размер</div><div class="d">2 ч 30 мин</div><div class="s">2 800 ₽</div></div>
@@ -350,7 +359,8 @@ footer a:hover{color:#f39ad0}
       <div class="pr"><div class="n">Дизайн средней сложности</div><div class="d">20 мин</div><div class="s">250 – 750 ₽</div></div>
       <div class="pr"><div class="n">Дизайн сложный</div><div class="d">30 мин</div><div class="s">450 – 1 300 ₽</div></div>
       <div class="pr"><div class="n">Френч</div><div class="d">30 мин</div><div class="s">300 – 700 ₽</div></div>
-      <div class="pr"><div class="n">Ремонт ногтя</div><div class="d">10 мин</div><div class="s">100 ₽</div></div>
+      <div class="pr"><div class="n">Ремонт ногтя</div><div class="d">10 мин</div><div class="s">100 ₽</div></div></div>
+      <button class="morebtn" type="button" data-open="Показать все цены маникюра — ещё 13" data-close="Свернуть">Показать все цены маникюра — ещё 13</button>
     </div>
 
     <div class="panel" id="p2">
@@ -359,11 +369,12 @@ footer a:hover{color:#f39ad0}
       <div class="pr"><div class="n">Педикюр полный без покрытия</div><div class="d">1 ч 30 мин</div><div class="s">1 550 – 1 900 ₽</div></div>
       <div class="pr"><div class="n">Педикюр полный с гель-лаком</div><div class="d">2 ч</div><div class="s">2 400 ₽</div></div>
       <div class="pr"><div class="n">Бразильский педикюр</div><div class="d">1 ч 30 мин</div><div class="s">1 900 – 2 300 ₽</div></div>
-      <div class="pr"><div class="n">Педикюр мужской, полный</div><div class="d">2 ч</div><div class="s">2 200 ₽</div></div>
+      <div class="more"><div class="pr"><div class="n">Педикюр мужской, полный</div><div class="d">2 ч</div><div class="s">2 200 ₽</div></div>
       <div class="pr"><div class="n">Педикюр мужской, пальчики</div><div class="d">1 ч</div><div class="s">1 600 ₽</div></div>
       <div class="pr"><div class="n">Педикюр мужской, стопа</div><div class="d">1 ч</div><div class="s">1 600 ₽</div></div>
       <div class="pr"><div class="n">Покрытие лаком</div><div class="d">10 мин</div><div class="s">300 ₽</div></div>
-      <div class="pr"><div class="n">Полировка ногтевой пластины</div><div class="d">20 мин</div><div class="s">300 ₽</div></div>
+      <div class="pr"><div class="n">Полировка ногтевой пластины</div><div class="d">20 мин</div><div class="s">300 ₽</div></div></div>
+      <button class="morebtn" type="button" data-open="Показать все цены педикюра — ещё 5" data-close="Свернуть">Показать все цены педикюра — ещё 5</button>
     </div>
 
     <div class="panel" id="p3">
@@ -373,7 +384,7 @@ footer a:hover{color:#f39ad0}
       <div class="pr"><div class="n">Наращивание ресниц, 2,5D</div><div class="d">2 ч</div><div class="s">2 100 ₽</div></div>
       <div class="pr"><div class="n">Наращивание ресниц, 3D</div><div class="d">2 ч</div><div class="s">2 300 ₽</div></div>
       <div class="pr"><div class="n">Наращивание ресниц, 3,5D</div><div class="d">2 ч 30 мин</div><div class="s">2 400 ₽</div></div>
-      <div class="pr"><div class="n">Наращивание ресниц, 4D</div><div class="d">2 ч 30 мин</div><div class="s">2 600 ₽</div></div>
+      <div class="more"><div class="pr"><div class="n">Наращивание ресниц, 4D</div><div class="d">2 ч 30 мин</div><div class="s">2 600 ₽</div></div>
       <div class="pr"><div class="n">Наращивание ресниц, 4,5D</div><div class="d">2 ч</div><div class="s">2 800 ₽</div></div>
       <div class="pr"><div class="n">Наращивание ресниц, 5D</div><div class="d">2 ч</div><div class="s">3 100 ₽</div></div>
       <div class="pr"><div class="n">Наращивание ресниц, 5,5D</div><div class="d">2 ч</div><div class="s">3 300 ₽</div></div>
@@ -385,7 +396,8 @@ footer a:hover{color:#f39ad0}
       <div class="pr"><div class="n">Ламинирование + окрашивание</div><div class="d">1 ч 10 мин</div><div class="s">1 600 ₽</div></div>
       <div class="pr"><div class="n">Окрашивание ресниц</div><div class="d">30 мин</div><div class="s">600 ₽</div></div>
       <div class="pr"><div class="n">Эффекты: мокрый, стрелка, цветные, стразы, лучи</div><div class="d">—</div><div class="s">200 ₽</div></div>
-      <div class="pr"><div class="n">Снятие ресниц</div><div class="d">20 мин</div><div class="s">300 ₽</div></div>
+      <div class="pr"><div class="n">Снятие ресниц</div><div class="d">20 мин</div><div class="s">300 ₽</div></div></div>
+      <button class="morebtn" type="button" data-open="Показать все цены ресниц — ещё 13" data-close="Свернуть">Показать все цены ресниц — ещё 13</button>
     </div>
 
     <div class="panel" id="p4">
@@ -394,12 +406,13 @@ footer a:hover{color:#f39ad0}
       <div class="pr"><div class="n">Окрашивание бровей</div><div class="d">30 мин</div><div class="s">800 ₽</div></div>
       <div class="pr"><div class="n">Ламинирование бровей</div><div class="d">1 ч</div><div class="s">1 000 ₽</div></div>
       <div class="pr"><div class="n">Коррекция + окрашивание</div><div class="d">1 ч</div><div class="s">1 100 ₽</div></div>
-      <div class="pr"><div class="n">Ламинирование + коррекция</div><div class="d">1 ч 10 мин</div><div class="s">1 400 ₽</div></div>
+      <div class="more"><div class="pr"><div class="n">Ламинирование + коррекция</div><div class="d">1 ч 10 мин</div><div class="s">1 400 ₽</div></div>
       <div class="pr"><div class="n">Коррекция + окрашивание + ламинирование</div><div class="d">1 ч 20 мин</div><div class="s">1 700 ₽</div></div>
       <div class="pr"><div class="n">Осветление бровей</div><div class="d">30 мин</div><div class="s">500 ₽</div></div>
       <div class="pr"><div class="n">Деликатное осветление с тонированием</div><div class="d">1 ч</div><div class="s">1 100 ₽</div></div>
       <div class="pr"><div class="n">Прореживание бровей</div><div class="d">20 мин</div><div class="s">300 ₽</div></div>
-      <div class="pr"><div class="n">Удаление нежелательных волосков, 1 зона</div><div class="d">15 мин</div><div class="s">350 ₽</div></div>
+      <div class="pr"><div class="n">Удаление нежелательных волосков, 1 зона</div><div class="d">15 мин</div><div class="s">350 ₽</div></div></div>
+      <button class="morebtn" type="button" data-open="Показать все цены бровей — ещё 6" data-close="Свернуть">Показать все цены бровей — ещё 6</button>
     </div>
 
     <p class="note">Цены и длительность указаны так, как они стоят в вашей онлайн-записи.
@@ -583,6 +596,16 @@ document.getElementById('tabs').addEventListener('click', function (e) {
   [].forEach.call(document.querySelectorAll('.panel'), function (x) { x.classList.remove('on'); });
   t.classList.add('on');
   document.getElementById(t.dataset.p).classList.add('on');
+});
+
+// «показать все цены» внутри вкладки
+[].forEach.call(document.querySelectorAll('.morebtn'), function (b) {
+  b.addEventListener('click', function () {
+    var panel = b.closest('.panel');
+    var open = panel.classList.toggle('open');
+    b.textContent = open ? b.dataset.close : b.dataset.open;
+    if (!open) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 });
 
 var ck = document.getElementById('ck');
