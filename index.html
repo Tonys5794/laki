@@ -79,34 +79,36 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdro
   background:radial-gradient(900px 520px at 84% -10%, rgba(214,31,147,.30), transparent 62%),
              radial-gradient(760px 480px at 4% 108%, rgba(112,50,123,.42), transparent 60%)}
 .hero .waves{position:absolute;inset:auto 0 0 0;width:100%;height:78%;z-index:0;pointer-events:none}
-.hero-in{position:relative;z-index:1;padding:88px 0 78px;max-width:700px}
-@media(max-width:960px){.hero-in{padding:58px 0 54px;max-width:none}}
-.hero h1{font-size:clamp(38px,6.6vw,80px);line-height:.98;margin-bottom:20px;color:#fff}
+.hero-in{position:relative;z-index:1;padding:76px 0 60px}
+@media(max-width:960px){.hero-in{padding:52px 0 46px}}
+/* заголовок слева, текст с кнопками справа — чтобы не копилось в одну колонку */
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:28px;align-items:start}}
+.hero h1{font-size:clamp(38px,6.2vw,78px);line-height:.96;margin:0;color:#fff}
 .hero h1 span{display:block}
 .hero h1 .accent{color:#f77fc8}
-.hero .lead{color:#c6aed6;font-size:17.5px;max-width:540px}
+.hero .lead{color:#c6aed6;font-size:17px;margin-bottom:26px}
 .pill{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);
   border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);
   border-radius:100px;padding:9px 20px;font-size:12.5px;font-weight:700;color:#fff;margin-bottom:22px}
 .pill i{width:8px;height:8px;border-radius:50%;background:#5fe3a3;box-shadow:0 0 0 4px rgba(95,227,163,.22)}
-.hero .cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.hero .cta{display:flex;gap:13px;flex-wrap:wrap}
 .hero .btn.solid{background:#fff;color:var(--violet);padding:17px 36px;font-size:15px}
 .hero .btn.solid:hover{box-shadow:0 14px 32px rgba(0,0,0,.3)}
 .hero .btn.line{border:1.5px solid rgba(255,255,255,.45);color:#fff;background:transparent;
   padding:16px 32px;font-size:15px}
 .hero .btn.line:hover{background:rgba(255,255,255,.12);color:#fff}
-.perks-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:30px}
+.perks-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:40px}
 .perks-row span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);
   border:1px solid rgba(255,255,255,.17);border-radius:100px;padding:10px 18px;font-size:12.5px;
   font-weight:600;color:#f3e7f7}
-.hero-prices{display:flex;flex-wrap:wrap;margin-top:38px;
+.hero-prices{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;margin-top:42px;
   border-top:1px solid rgba(255,255,255,.16);padding-top:24px}
-.hero-prices div{padding-right:28px;margin-right:28px;border-right:1px solid rgba(255,255,255,.16)}
-.hero-prices div:last-child{border-right:0;margin-right:0;padding-right:0}
-.hero-prices b{display:block;font-size:22px;font-weight:800;color:#f9c8e6;line-height:1.2}
+.hero-prices div{flex:1 1 160px}
+.hero-prices b{display:block;font-size:clamp(20px,2.2vw,27px);font-weight:800;color:#f9c8e6;line-height:1.2}
 .hero-prices span{font-size:11.5px;color:#b9a3c7;letter-spacing:.11em;text-transform:uppercase}
 @media(max-width:640px){
-  .hero-prices div{padding:8px 16px 8px 0;margin-right:16px}
+  .hero-prices div{flex:1 1 40%}
   .perks-row span{font-size:11.5px;padding:9px 14px}
 }
 
@@ -251,17 +253,23 @@ footer a:hover{color:#f39ad0}
   </svg>
 
   <div class="wrap hero-in">
-    <span class="pill"><i></i>Запись открыта круглосуточно · рейтинг 5,0 в 2ГИС</span>
-    <h1>
-      <span>Позвольте себе</span>
-      <span class="accent">роскошь</span>
-    </h1>
-    <p class="lead">Бьюти-студия «ЛАКИ» в сердце Барнаула. Ногти, ресницы и брови в одном месте —
-      премиальные материалы, стерильные инструменты и мастера, которые любят своё дело.</p>
-
-    <div class="cta">
-      <a class="btn solid" href="https://n1969715.yclients.com/company/1440118/personal/menu" target="_blank" rel="noopener">Записаться онлайн</a>
-      <a class="btn line" href="#price">Смотреть прайс</a>
+    <div class="hero-grid">
+      <div>
+        <span class="pill"><i></i>Запись круглосуточно · рейтинг 5,0 в 2ГИС</span>
+        <h1>
+          <span>Позвольте себе</span>
+          <span class="accent">роскошь</span>
+        </h1>
+      </div>
+      <div>
+        <p class="lead">Бьюти-студия «ЛАКИ» в сердце Барнаула. Ногти, ресницы и брови
+          в одном месте — премиальные материалы, стерильные инструменты и мастера,
+          которые любят своё дело.</p>
+        <div class="cta">
+          <a class="btn solid" href="https://n1969715.yclients.com/company/1440118/personal/menu" target="_blank" rel="noopener">Записаться онлайн</a>
+          <a class="btn line" href="#price">Смотреть прайс</a>
+        </div>
+      </div>
     </div>
 
     <div class="perks-row">
