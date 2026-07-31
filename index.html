@@ -92,9 +92,12 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdro
 .hero-art .big{position:absolute;inset:0 22% 20% 0;border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
 .hero-art .sm{position:absolute;border-radius:18px;overflow:hidden;border:4px solid #fff;
   box-shadow:0 12px 30px rgba(75,37,94,.2)}
-.hero-art .s1{width:40%;aspect-ratio:1;top:6%;right:0}
-.hero-art .s2{width:36%;aspect-ratio:1;bottom:6%;right:9%}
-.hero-art .s3{width:33%;aspect-ratio:1;bottom:0;left:6%}
+.hero-art .s1{width:40%;top:6%;right:0}
+.hero-art .s2{width:36%;bottom:6%;right:9%}
+.hero-art .s3{width:33%;bottom:0;left:6%}
+/* квадрат задаём распоркой, а не aspect-ratio: так высота считается надёжно */
+.hero-art .sm::before{content:"";display:block;padding-top:100%}
+.hero-art .sm img{position:absolute;inset:0}
 .hero-art img{width:100%;height:100%;object-fit:cover}
 .hero-art .tagx{position:absolute;z-index:3;background:#fff;border-radius:100px;padding:10px 18px;font-size:12.5px;
   font-weight:700;color:var(--violet);box-shadow:0 10px 26px rgba(75,37,94,.18);white-space:nowrap}
